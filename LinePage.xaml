@@ -1,0 +1,56 @@
+﻿<local:BasicNavPage
+    x:Class="GraphicsUWP.LinePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GraphicsUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel x:Name="drawingOps" Grid.Row="1" Grid.Column="1" Margin="30" VerticalAlignment="Top">
+            <!--<TextBlock Foreground="White" FontSize="20" Text="绘制..." TextAlignment="Center" Margin="10"/>-->
+            <!--<ComboBox IsEditable="True" Width="200" />-->
+            <!--TextSubmitted="Combo3_TextSubmitted"-->
+            <!--ItemsSource="{x:Bind FontSizes}"-->
+            <muxc:RadioButtons x:Name="drawWhat" VerticalAlignment="Center" Header="Draw..." SelectedIndex="0" MaxColumns="1">
+                <x:String>Line</x:String>
+            </muxc:RadioButtons>
+
+            <ComboBox x:Name="drawMode" 
+                    Width="{Binding Width, ElementName=drawingOps, Mode=OneWay}" SelectedIndex="0" VerticalAlignment="Center" Header="DrawingMode">
+                <!--SelectionChanged="displayModeCombobox_SelectionChanged-->
+                <x:String>DDA</x:String>
+                <x:String>Bresenham</x:String>
+                <x:String>库函数</x:String>
+            </ComboBox>
+        </StackPanel>
+
+        <Grid Margin="30, 190, 30, 0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" BorderBrush="SkyBlue" BorderThickness="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <muxc:NumberBox x:Name="x1_control"  Header="Enter x1:" Width="100" Margin="0,9,0,0" Value="0" SpinButtonPlacementMode="Compact" SmallChange="5" LargeChange="20"/>
+            <muxc:NumberBox x:Name="y1_control"  Header="Enter y1:" Width="100" Margin="0,9,0,0" Value="0" SpinButtonPlacementMode="Compact" SmallChange="5" LargeChange="20" Grid.Column="1"/>
+            <muxc:NumberBox x:Name="x2_control"  Header="Enter x2:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="5" LargeChange="20" Grid.Row="1"/>
+            <muxc:NumberBox x:Name="y2_control"  Header="Enter y2:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="5" LargeChange="20" Grid.Row="1" Grid.Column="1"/>
+
+            <Button x:Name="drawLineButton" Content="Draw Line!" Width="90" Height="40" Margin="20,30,20,30" Click="DrawLineButton_Click" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
+                <FlyoutBase.AttachedFlyout>
+                    <Flyout>
+                        <TextBlock Text="输入的数据不合法。&#x0a;（-21&lt;x&lt;21, -21&lt;y&lt;21)" /> 
+                    </Flyout>
+                </FlyoutBase.AttachedFlyout>
+            </Button>
+        </Grid>
+    </Grid>
+</local:BasicNavPage>

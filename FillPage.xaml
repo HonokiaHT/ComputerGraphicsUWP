@@ -1,0 +1,102 @@
+﻿<local:BasicNavPage
+    x:Class="GraphicsUWP.FillPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GraphicsUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid><!--内含1StackPanel 1Grid 2Button-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel x:Name="drawingOps" Margin="30" VerticalAlignment="Top">
+
+            <!--<muxc:RadioButtons x:Name="drawWhat" Width="Auto" VerticalAlignment="Center" Header="Draw..."
+                      SelectionChanged="DrawWhat_SelectionChanged" Loaded="DrawWhat_Loaded" MaxColumns="2">
+                <x:String>Circle</x:String>
+                <x:String>Ellipse</x:String>
+            </muxc:RadioButtons>-->
+
+            <muxc:RadioButtons x:Name="fillMode" Width="{Binding Width, ElementName=drawingOps, Mode=OneWay}"
+                     VerticalAlignment="Center" Header="FillMode" SelectedIndex="0">
+                <x:String>ScanlineSeedFill</x:String>
+            </muxc:RadioButtons>
+
+        </StackPanel>
+
+        <Grid Margin="30, 190, 30, 0" VerticalAlignment="Top" BorderBrush="SkyBlue" BorderThickness="1"><!--包含数字框 and 2Buttons-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="PointsGrid" Margin="0, 9, 0, 0" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <muxc:NumberBox x:Name="x1_text" Header="Enter x1:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5"/>
+                <muxc:NumberBox x:Name="y1_text" Header="Enter y1:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5" Grid.Column="1"/>
+                <muxc:NumberBox x:Name="x2_text" Header="Enter x2:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5" Grid.Row="1"/>
+                <muxc:NumberBox x:Name="y2_text" Header="Enter y2:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5" Grid.Row="1" Grid.Column="1"/>
+                <muxc:NumberBox x:Name="x3_text" Header="Enter x3:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5" Grid.Row="2"/>
+                <muxc:NumberBox x:Name="y3_text" Header="Enter y3:" Width="100" Value="0" SpinButtonPlacementMode="Compact" SmallChange="2" LargeChange="5" Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Button x:Name="deleteButton" Content="Delete" Width="60" Height="40" Margin="20,30,20,30" Click="DeleteButton_Click" HorizontalAlignment="Right">
+                    <FlyoutBase.AttachedFlyout>
+                        <Flyout>
+                            <TextBlock Text="点数量已达最小值3" />
+                        </Flyout>
+                    </FlyoutBase.AttachedFlyout>
+                </Button>
+
+                <Button x:Name="addButton" Content="Add" Width="{Binding Width, ElementName=deleteButton, Mode=OneWay}" Height="40" Margin="20,30,100,30" Click="AddButton_Click" HorizontalAlignment="Right">
+                    <FlyoutBase.AttachedFlyout>
+                        <Flyout>
+                            <TextBlock Text="点数量已达最大值8" />
+                        </Flyout>
+                    </FlyoutBase.AttachedFlyout>
+                </Button>
+            </Grid><!-- Add and Delete Button end-->
+            
+
+        </Grid><!--SkyBlue Border end-->
+
+        <Button x:Name="linkButton" Content="Link Points!" Width="90" Height="40" Margin="20,30,130,30"  Click="LinkButton_Click" Grid.Row="1" HorizontalAlignment="Right">
+            <FlyoutBase.AttachedFlyout>
+                <Flyout>
+                    <TextBlock Text="输入的数据不合法。&#x0a;（0&lt;x&lt;21)" />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
+        </Button>
+
+        <Button x:Name="fillButton" Content="Fill!" Width="90" Height="40" Margin="20,0,20,0" Click="FillButton_Click" Grid.Row="1" HorizontalAlignment="Right">
+            <FlyoutBase.AttachedFlyout>
+                <Flyout>
+                    <TextBlock Text="请先绘制多边形" />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
+        </Button>
+
+    </Grid>
+</local:BasicNavPage>
