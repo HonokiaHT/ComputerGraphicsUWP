@@ -66,7 +66,7 @@ namespace GraphicsUWP
 
                                 /*------------------------算法---------------------*/
         //扫描线种子填充算法
-        private async Task ScanLineBoundryFill(int x, int y, Color innerColor)
+        private async Task ScanLineSeedFill(int x, int y, Color innerColor)
         {
             Stack<Point> s = new Stack<Point>();    //用于保存种子
             Point p;
