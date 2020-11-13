@@ -290,7 +290,7 @@ namespace GraphicsUWP
             }
             while (!IsSeedInPolygon(seedX, seedY));  //随机出有效种子
 
-            await ScanLineBoundryFill(seedX, seedY, innerColor);
+            await ScanLineSeedFill(seedX, seedY, innerColor);
 
             isEdge = new bool[45, 45];  //绘制结束，重置多边形边界数组
             limits = new int[4]         //          重置矩形框架边界
