@@ -16,5 +16,5 @@
     - CohenSutherlandLineClipping 
 
 ---
-<img src="readme/example.gif" alt="example" style="zoom: 67%;">
+<img src="readme/example.gif" alt="example" style="zoom: 40%;">
 
