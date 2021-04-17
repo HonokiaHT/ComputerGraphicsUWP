@@ -16,3 +16,4 @@
     - CohenSutherlandLineClipping 
 
 ---
+![example](readme/example.gif)
