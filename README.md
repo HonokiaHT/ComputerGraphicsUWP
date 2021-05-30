@@ -1,7 +1,6 @@
 # ComputerGraphicsUWP
 
-CQU软件学院 计算机图形学实验
-
+重庆大学软件学院 计算机图形学实验
 ---
 1. 绘制直线
     - DDA
