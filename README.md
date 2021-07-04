@@ -21,3 +21,5 @@
 ---
 <img src="readme/example.gif" alt="example" style="zoom: 40%;" />
 
+---
+[联系作者](mailto:honokiaht@gmail.com?Subject=GraphicsUWP)
