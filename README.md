@@ -1,20 +1,22 @@
 # ComputerGraphicsUWP
 
-重庆大学软件学院 计算机图形学实验
----
-1. 绘制直线
-    - DDA
-    - Bresenham  
+## UWP 重庆大学软件学院 计算机图形学实验
+
+### 已实现功能
+
+#### 绘制直线
+* DDA
+* Bresenham  
     
-2. 绘制圆/椭圆
-    - MidPoint
-    - Bresenham  
+#### 绘制圆/椭圆
+* MidPoint
+* Bresenham  
     
-3. 区域填充
-    - ScanLineSeedFill  
+#### 区域填充
+* ScanLineSeedFill  
     
-4. 直线裁剪
-    - CohenSutherlandLineClipping 
+#### 直线裁剪
+* CohenSutherlandLineClipping 
 
 ---
 <img src="readme/example.gif" alt="example" style="zoom: 40%;" />
