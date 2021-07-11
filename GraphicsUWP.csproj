@@ -119,22 +119,22 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EllipsePage.xaml.cs">
+    <Compile Include="Pages\EllipsePage.xaml.cs">
       <DependentUpon>EllipsePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FillPage.xaml.cs">
+    <Compile Include="Pages\FillPage.xaml.cs">
       <DependentUpon>FillPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LineClipingPage.xaml.cs">
+    <Compile Include="Pages\LineClipingPage.xaml.cs">
       <DependentUpon>LineClipingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LinePage.xaml.cs">
+    <Compile Include="Pages\LinePage.xaml.cs">
       <DependentUpon>LinePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BasicNavPage.cs" />
+    <Compile Include="Pages\BasicNavPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,23 +157,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="EllipsePage.xaml">
+    <Page Include="Pages\EllipsePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FillPage.xaml">
+    <Page Include="Pages\FillPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LineClipingPage.xaml">
+    <Page Include="Pages\LineClipingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LinePage.xaml">
+    <Page Include="Pages\LinePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
